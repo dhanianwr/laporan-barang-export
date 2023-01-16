@@ -12,7 +12,7 @@ const navigation = [
   {
     title: "Tanggal Barang Keluar",
     href: "/admin/barangkeluar",
-    icon: "bi bi-pencil",
+    icon: "bi bi-calendar-x",
   },
 ];
 

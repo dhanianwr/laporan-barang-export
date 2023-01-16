@@ -52,7 +52,6 @@ const databarang = ({data}) => {
                 <th>Kode Udang</th>
                 <th>Nama Udang</th>
                 <th>Ukuran Udang (cm)</th>
-                <th>Tanggal Export</th>
                 <th>Action</th>
               </tr>
             </thead>
@@ -63,7 +62,6 @@ const databarang = ({data}) => {
                   <td>{qdata.attributes.kode_udang}</td>
                   <td>{qdata.attributes.nama_udang}</td>
                   <td>{qdata.attributes.ukuran_udang}</td>
-                  <td>{qdata.attributes.barangkeluar.data.attributes.tanggal}</td>
                   <td>
                   <Button className='btn sm-2' color='danger' value={qdata.id} onClick={(e) => deleteBarang(e.target.value, qdata.attributes.nama_udang)}>
                     <Link href='/'>
