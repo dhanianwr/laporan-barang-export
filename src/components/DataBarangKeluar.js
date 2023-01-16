@@ -1,20 +1,14 @@
-import { Button, Card, CardBody, CardTitle, CardSubtitle, Table } from "reactstrap";
+import { Card, CardBody, CardTitle, CardSubtitle, Table } from "reactstrap";
 import Link from 'next/link'
 
 const databarangkeluar = ({data}) => {
+  console.log({data})
   return (
     <Card>
       <CardBody>
-      <Button className='btn my-3' color='primary'>
-            <Link href='/admin/createbarang'>
-                <a className='text-white text-decoration-none'>
-                    Tambah
-                </a>
-            </Link>
-        </Button>
         <CardTitle tag="h5"></CardTitle>
         <CardSubtitle className="mb-2 text-muted" tag="h6">
-          Data Stock Barang dan Barang Keluar Terakhir
+          Rekap Data Barang Keluar
         </CardSubtitle>
         <div className="table-responsive">
           <Table className="text-nowrap mt-3" borderless>
@@ -31,9 +25,9 @@ const databarangkeluar = ({data}) => {
               {data.map((idata, index) => (
                 <tr key={index} className="border-top" id="tabel-isi">
                   <td>{index + 1}</td>
-                  <td>{idata.attributes.kode_udang}</td>
-                  <td>{idata.attributes.nama_udang}</td>
-                  <td>{idata.attributes.ukuran_udang}</td>
+                  <td>{idata.attributes.barang.data.attributes.kode_udang}</td>
+                  <td>{idata.attributes.barang.data.attributes.nama_udang}</td>
+                  <td>{idata.attributes.barang.data.attributes.ukuran_udang}</td>
                   <td>{idata.attributes.tanggal}</td>
                 </tr>
               ))}

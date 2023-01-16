@@ -45,6 +45,14 @@ export async function getServerSideProps() {
             kode_udang
             nama_udang
             ukuran_udang
+            barangkeluar {
+              data {
+                id
+                attributes {
+                  tanggal
+                }
+              }
+            }
           }
         }
       }

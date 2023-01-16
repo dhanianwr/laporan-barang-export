@@ -37,16 +37,24 @@ export async function getServerSideProps() {
   const { data } = await client.query ({
     query: gql`
     query {
-      barangs {
-        data {
-          id
-          attributes {
-            kode_udang
-            nama_udang
-            ukuran_udang
-          }
+        barangkeluars {
+            data {
+                id
+                attributes {
+                    tanggal
+                    barang {
+                        data {
+                            id
+                            attributes {
+                                kode_udang
+                                nama_udang
+                                ukuran_udang
+                            }
+                        }
+                    }
+                }
+            }
         }
-      }
     }
     `
   })

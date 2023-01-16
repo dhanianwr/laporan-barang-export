@@ -9,6 +9,7 @@ const client = new ApolloClient({
 })
 
 const databarang = ({data}) => {
+  console.log({data})
   const route = useRouter()
   async function deleteBarang(id, namaUdang) {
     try {
@@ -51,6 +52,7 @@ const databarang = ({data}) => {
                 <th>Kode Udang</th>
                 <th>Nama Udang</th>
                 <th>Ukuran Udang (cm)</th>
+                <th>Tanggal Export</th>
                 <th>Action</th>
               </tr>
             </thead>
@@ -61,15 +63,16 @@ const databarang = ({data}) => {
                   <td>{qdata.attributes.kode_udang}</td>
                   <td>{qdata.attributes.nama_udang}</td>
                   <td>{qdata.attributes.ukuran_udang}</td>
+                  <td>{qdata.attributes.barangkeluar.data.attributes.tanggal}</td>
                   <td>
-                  <Button className='btn sm-3' color='danger' value={qdata.id} onClick={(e) => deleteBarang(e.target.value, qdata.attributes.nama_udang)}>
+                  <Button className='btn sm-2' color='danger' value={qdata.id} onClick={(e) => deleteBarang(e.target.value, qdata.attributes.nama_udang)}>
                     <Link href='/'>
                         <a className='text-white text-decoration-none'>
                           Hapus
                         </a>
                     </Link>
                   </Button>
-                  <Button className='btn sm-3' color='primary'>
+                  <Button className='btn sm-2' color='success'>
                       <Link href={`/admin/updatebarang?id=${qdata.id}&kodeUdang=${qdata.attributes.kode_udang}&namaUdang=${qdata.attributes.nama_udang}&ukuranUdang=${qdata.attributes.ukuran_udang}`}>
                           <a className='text-white text-decoration-none'>
                             Update
