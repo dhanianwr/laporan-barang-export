@@ -1,0 +1,28 @@
+@import "variables";
+@import "~bootstrap/scss/bootstrap";
+@import "~bootstrap-icons/font/bootstrap-icons.scss";
+@import "./layout/sidebar";
+@import "./layout/container";
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
+#tabel-judul {
+    text-align: center;
+}
+#tabel-isi {
+    text-align: center;
+}
+#nama-logo{
+    margin-left: 70px;
+    margin-top: -55px;
+    font-family: 'Fredoka One', cursive;
+}
+#tombolsubmit{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   
+}
+
+// #tombool{
+//     margin-right: 20px;
+//     margin-left: 20px;
+// }
